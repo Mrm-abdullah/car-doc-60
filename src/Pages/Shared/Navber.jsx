@@ -1,30 +1,31 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.svg'
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navber = () => {
-    // const { user, Signout } = useContext(AuthContext)
-    // const handleLogout = () => {
-    //     Signout()
-    //         .then(() => {
-    //             // Sign-out successful.
-    //         }).catch((error) => {
-    //             console.log(error);
-    //         });
-    // }
+    const { user, handleLogoutUser } = useContext(AuthContext)
+    const handleLogout = () => {
+        handleLogoutUser()
+            .then(() => {
+                // Sign-out successful.
+            })
+            .catch((error) => {
+                console.log('logout error', error);
+            });
+    }
     const Navbers = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
-        {/* { */}
-            {/* user?.email  ? <> */}
-                    <li><NavLink to="/bookings"> My Bookings</NavLink></li>
-                    <li><Link
-                    //  onClick={handleLogout}
-                     >Log out</Link></li>
-                </>
-                {/* : */}
-                 <li><NavLink to="/login">Login</NavLink></li>
-        {/* // } */}
-    // </>  
+        {
+            user ? <>
+                <li> <NavLink to="/bookings"> My Bookings</NavLink></li>
+                <li><Link onClick={handleLogout} >Log out</Link></li>
+            </>
+                :
+                <li> <NavLink to="/login">Login</NavLink></li>
+        }
+    </>
     return (
         <div className="navbar bg-base-100 my-12">
             <div className="navbar-start">

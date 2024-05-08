@@ -13,13 +13,14 @@ const SignUp = () => {
         const password = form.password.value;
         console.log(name, email, password);
         handleCreateUser(email, password)
-        .then((result) => {
+        .then(() => {
             // Signed up 
-            const user = result.user;
+            // const user = result.user;
           })
           .catch((error) => {
-            const errorCode = error.code;
+            // const errorCode = error.code;
             const errorMessage = error.message;
+            console.log(errorMessage);
           });
         
     }
