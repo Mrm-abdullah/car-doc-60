@@ -25,6 +25,8 @@ Pages
  >Shared
   >>Navber
   >>Footer
+Providers
+ >AauthProviders
 Routes
  >Routes
 
