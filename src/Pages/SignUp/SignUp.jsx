@@ -12,6 +12,27 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password);
+
+        // dynamicaly from korar jonno
+        // console.log(e.currentTarget);
+        // const form = new FormData(e.currentTarget)
+        // console.log(form);
+        // console.log(form.get('password'));
+
+        // validation korar jonno
+
+        // setError('')
+        // setSuccess('')
+        // if (password.length<6) {
+        //     setError('Password should be at least 6 characters (auth/weak-password).')
+        //     return;
+        // }
+        // else if (!/[A-Z]/.test(password)){
+        //     setError('please provide 1 upper case')
+        //     return;
+        // }
+
+        
         handleCreateUser(email, password)
         .then(() => {
             // Signed up 

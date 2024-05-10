@@ -16,6 +16,10 @@
 Layout
  >Main
 Pages
+ >SignUp
+  >>SignUp
+ >Login
+  >>Login
  >Home
   >>Home
   >>Banner
@@ -25,9 +29,14 @@ Pages
  >Shared
   >>Navber
   >>Footer
+ >CheckOut
+  >>Cheackout
+  >>Bookings
+  >>BookingTable
 Providers
  >AauthProviders
 Routes
  >Routes
+ >RrivateRoutes
 
 <!-- .eslintrc.cjs -->  rules: {'react/prop-types': 'off', }
